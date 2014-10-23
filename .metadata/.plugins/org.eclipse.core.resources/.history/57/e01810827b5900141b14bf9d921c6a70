@@ -1,0 +1,12 @@
+package interfaz;
+
+import java.awt.Canvas;
+
+public class IClase extends Vagon {
+	final int CANTIDAD_PASAJEROS = 10;
+	
+	public IClase(Canvas canvas) {
+		super(canvas);
+	}
+	
+}

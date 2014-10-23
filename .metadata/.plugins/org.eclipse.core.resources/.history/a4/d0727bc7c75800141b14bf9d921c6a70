@@ -1,0 +1,54 @@
+package interfaz;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Lector {
+	String direccion, estacion, id, kilometros;
+	BufferedReader lectorArchivo;
+	
+	public Lector(String direccion){
+		this.direccion = direccion;
+		try {
+			lectorArchivo = new BufferedReader(new FileReader(direccion));
+			String linea;
+			while(( linea = lectorArchivo.readLine().toLowerCase())!=null){
+				System.out.println(linea);
+				comandos(linea);
+			}
+			lectorArchivo.close();
+			
+		} catch (IOException e) {
+			System.out.println("Error al abrir el archivo.");
+			e.printStackTrace();
+		}
+	}
+	
+	public void comandos(String linea){
+		switch(linea){
+		case "suben":
+			
+		break;
+		case "bajan":
+			
+		break;
+		default:
+			if(isEstacion(linea)){
+				
+			}
+		break;
+		}
+	}
+	
+	public boolean isEstacion(String linea){
+		boolean isEstacion=false;
+		String temporal[];
+		temporal = linea.split("\\s+");
+		if(temporal.length == 3){
+			isEstacion = true;
+		}
+		return isEstacion;
+	}
+	
+}

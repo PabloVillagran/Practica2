@@ -1,0 +1,12 @@
+package interfaz;
+
+import java.awt.Canvas;
+
+@SuppressWarnings("serial")
+public class IIIClase extends Vagon{
+
+	public IIIClase(Canvas canvas) {
+		super(canvas);
+	}
+	
+}

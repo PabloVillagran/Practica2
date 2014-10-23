@@ -1,0 +1,13 @@
+package interfaz;
+
+import java.awt.Canvas;
+
+public class Carbon extends Vagon{
+	final int KILOMETROS = 100;
+	
+	public Carbon(Canvas canvas) {
+		super(canvas);
+		
+	}
+	
+}
