@@ -9,7 +9,7 @@ import java.awt.Graphics2D;
 public class Vagon{
 	Canvas canvas;
 	Vagon siguiente;
-	int cantidadPasajeros, block=125, row=127;
+	int cantidadPasajeros;
 	
 	public Vagon(Canvas canvas){
 		this.canvas = canvas;
@@ -18,23 +18,10 @@ public class Vagon{
 	
 	public Vagon(int cantidadPasajeros){
 		this.cantidadPasajeros = cantidadPasajeros;
-		block+=block;
-		if(block >= 674){
-			block=7;
-			row+=row;
-		}
 	}
 	
 	public int pasajeros(){  
 		return cantidadPasajeros;
-	}
-	
-	public int getBlock(){
-		return block;
-	}
-	
-	public int getRow(){
-		return row;
 	}
 	
 	public void paint0(Graphics g){

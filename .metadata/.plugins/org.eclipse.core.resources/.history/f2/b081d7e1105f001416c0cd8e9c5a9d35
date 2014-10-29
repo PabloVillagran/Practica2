@@ -51,6 +51,7 @@ public class Interfaz extends JFrame{
 		
 		//Canvas
 		canvas.setBounds(5,35,400,235);
+		//canvas.setBackground(new Color(0,205,0));
 		canvas.setBackground(this.getBackground());
 		add(canvas);
 		
