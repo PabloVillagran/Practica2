@@ -50,7 +50,7 @@ public class Interfaz extends JFrame{
 		add(estaciones);
 		
 		//Canvas
-		canvas.setBounds(5,35,400,235);
+		canvas.setBounds(5,35,384,235);
 		//canvas.setBackground(new Color(0,205,0));
 		canvas.setBackground(this.getBackground());
 		add(canvas);
@@ -58,13 +58,13 @@ public class Interfaz extends JFrame{
 		//Botones
 		JButton avanzar = new JButton("Avanzar");
 		JButton retroceder = new JButton("Retroceder");
-		avanzar.setBounds(70,280,150,50);
+		avanzar.setBounds(470,680,150,50);
 		avanzar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				
 			}
 		});
-		retroceder.setBounds(235,280,150,50);
+		retroceder.setBounds(635,680,150,50);
 		avanzar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				
@@ -90,7 +90,7 @@ class NewCanvas extends Canvas{
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.scale(0.5, 0.5);
 		g2d.setColor(Color.orange.darker());
-		for(int y =126; y < getHeight();y+=127)	g2d.fillRect(0, y, 800, 10);
+		for(int y =126; y < getHeight();y+=127)	g2d.fillRect(0, y, getWidth(), 10);
 		new Vagon(this).paint0(g);
 	}
 }

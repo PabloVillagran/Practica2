@@ -35,7 +35,7 @@ public class Lector {
 				int pasajeros= Integer.valueOf(temp[1]);
 				int clase = Integer.valueOf(temp[3]);
 				if(clase == 1){
-					
+										
 				}
 				if(clase == 3){
 					
@@ -77,8 +77,7 @@ public class Lector {
 	public boolean isComando(String linea){
 		boolean isComando=false;
 		String temp[]=linea.split("\\s+");
-		if(temp.length == 4 && temp[2].contains("clase") && 
-				(temp[0].contains("suben") ^ temp[0].contains("bajan"))){
+		if(temp.length == 4 && temp[2].contains("clase")){
 			isComando=true;
 		}
 		return isComando;
