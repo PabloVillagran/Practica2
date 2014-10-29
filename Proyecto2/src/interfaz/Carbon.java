@@ -7,15 +7,14 @@ import java.awt.Graphics2D;
 
 public class Carbon extends Vagon{
 	final int KILOMETROS = 100;
-	int x, y;
-	Canvas canvas;
 	
 	public Carbon(){
+		this.idEstacion = idEstacion;
 	}
 	
 	@Override
 	public void paint0(Graphics g){
-		x=getBlock(); y=getRow();
+		int x=getBlock(), y=getRow();
 		if(x <= 674){
 			setBlock(x+=125);
 		}else{

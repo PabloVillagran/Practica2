@@ -7,17 +7,15 @@ import java.awt.Graphics2D;
 
 public class IClase extends Vagon {
 	final int CANTIDAD_PASAJEROS = 10;
-	int x, y;
-	Canvas canvas;
 	
 	public IClase(int pasajeros) {
 		super(pasajeros);
-		this.pasajeros = pasajeros;
+		this.idEstacion = idEstacion;
 	}
 	
 	@Override
 	public void paint0(Graphics g){
-		x=getBlock(); y=getRow();
+		int x=getBlock(), y=getRow();
 		if(x <= 674){
 			setBlock(x+=125);
 		}else{

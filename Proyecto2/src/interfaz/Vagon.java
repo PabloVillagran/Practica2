@@ -9,7 +9,7 @@ import java.awt.Graphics2D;
 public class Vagon{
 	Canvas canvas;
 	Vagon siguiente=null;
-	int pasajeros, block=0, row=0;
+	int pasajeros, block, row,clase, idEstacion;
 	
 	public Vagon(){
 		siguiente = null;
@@ -17,6 +17,8 @@ public class Vagon{
 	
 	public Vagon(Canvas canvas){
 		this.canvas = canvas;
+		block = 0;
+		row = 0;
 		siguiente = null;
 	}
 	

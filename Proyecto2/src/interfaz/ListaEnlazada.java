@@ -5,29 +5,60 @@ import java.awt.Graphics2D;
 
 public class ListaEnlazada {
 	
+	public String nombre,idEstacion, distancia;
 	public Vagon primerVagon;
-	
-	public ListaEnlazada(){
+	public int clase;
+
+	public ListaEnlazada(String nombre, String id,String distancia){
+		this.nombre = nombre;
+		this.idEstacion = id;
+		this.distancia = distancia.substring(0, distancia.indexOf("k"));
 		primerVagon = null;
 	}
 	
 	public void AgregarCarbon(){
 		Carbon nuevoVagon = new Carbon();
+		nuevoVagon.clase = 0;
 		nuevoVagon.siguiente = primerVagon;
 		primerVagon = nuevoVagon;
 	}
 	
 	public void AgregarClaseIII(int pasajeros){
 		IIIClase nuevoVagon = new IIIClase(pasajeros);
+		nuevoVagon.clase = 3;
 		nuevoVagon.siguiente = primerVagon;
 		primerVagon = nuevoVagon;
 	}
 	
 	public void AgregarClaseI(int pasajeros){
 		IClase nuevoVagon = new IClase(pasajeros);
+		nuevoVagon.clase = 1;
 		nuevoVagon.siguiente = primerVagon;
 		primerVagon = nuevoVagon;
-		
+	}
+	
+	public Vagon BuscarClase(int clase){
+		Vagon referencia = primerVagon;
+		if(primerVagon!= null){
+			while(referencia.clase!=clase){
+				referencia=referencia.siguiente;
+			}
+		}else{
+			System.out.println("lista vacia");
+		}
+		return referencia;
+	}
+
+	public Vagon BuscarID(int idEstacion){
+		Vagon referencia = primerVagon;
+		if(primerVagon!= null){
+			while(referencia.idEstacion!=idEstacion){
+				referencia=referencia.siguiente;
+			}
+		}else{
+			System.out.println("lista vacia");
+		}
+		return referencia;
 	}
 	
 	public void Agregar(int pasajeros, int posicion){
@@ -97,6 +128,18 @@ public class ListaEnlazada {
 		return tamano;
 	}
 	
+	public int ContarCarbon(){
+		int carbon = 0;
+		Vagon temp = primerVagon;
+		while(temp != null){
+			if(temp.clase == 0){
+				carbon++;
+			}
+			temp=temp.siguiente;
+		}
+		return carbon;
+	}
+	
 	public void Imprimir(Graphics g){
 		Graphics2D g2d = (Graphics2D) g;
 		Vagon vagonc = primerVagon;
@@ -108,5 +151,15 @@ public class ListaEnlazada {
 		}else{
 			System.out.println("Lista vacia!");
 		}
+	}
+	public static void main(String args[]){
+		ListaEnlazada lista = new ListaEnlazada("estacion","id","200km");
+		lista.AgregarClaseIII(5);
+		lista.AgregarClaseI(10);
+		lista.AgregarCarbon();
+		lista.AgregarCarbon();
+		lista.AgregarCarbon();
+		System.out.println(lista.BuscarClase(1).pasajeros);
+		System.out.println(lista.ContarCarbon());
 	}
 }
