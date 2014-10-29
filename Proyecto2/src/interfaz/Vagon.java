@@ -8,25 +8,32 @@ import java.awt.Graphics2D;
 
 public class Vagon{
 	Canvas canvas;
-	Vagon siguiente;
-	int cantidadPasajeros, block=125, row=127;
+	Vagon siguiente=null;
+	int pasajeros, block=0, row=0;
+	
+	public Vagon(){
+		siguiente = null;
+	}
 	
 	public Vagon(Canvas canvas){
 		this.canvas = canvas;
 		siguiente = null;
 	}
 	
-	public Vagon(int cantidadPasajeros){
-		this.cantidadPasajeros = cantidadPasajeros;
-		block+=block;
-		if(block >= 674){
-			block=7;
-			row+=row;
-		}
+	public Vagon(int pasajeros){
+		this.pasajeros = pasajeros;
 	}
 	
 	public int pasajeros(){  
-		return cantidadPasajeros;
+		return pasajeros;
+	}
+	
+	public void setBlock(int block){
+		this.block = block;
+	}
+	
+	public void setRow(int block){
+		this.block = block;
 	}
 	
 	public int getBlock(){
@@ -38,6 +45,7 @@ public class Vagon{
 	}
 	
 	public void paint0(Graphics g){
+		setBlock(127);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.RED);
 		int[] x2={40,40,67,123,123},y2={119,85,60,60,119};

@@ -90,6 +90,11 @@ class NewCanvas extends Canvas{
 		g2d.scale(0.5, 0.5);
 		g2d.setColor(Color.orange.darker());
 		for(int y =126; y < getHeight();y+=127)	g2d.fillRect(0, y, 800, 10);
+		ListaEnlazada lista = new ListaEnlazada();
 		new Vagon(this).paint0(g);
+		lista.Imprimir(g);
+		/*new Carbon().paint0(g);
+		new IClase(5).paint0(g);
+		new IIIClase(10).paint0(g);*/
 	}
 }

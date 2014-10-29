@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 public class ListaEnlazada {
 	
 	public Vagon primerVagon;
@@ -8,10 +11,23 @@ public class ListaEnlazada {
 		primerVagon = null;
 	}
 	
-	public void Agregar(int pasajeros){
-		Vagon nuevoVagon = new Vagon(pasajeros);
+	public void AgregarCarbon(){
+		Carbon nuevoVagon = new Carbon();
 		nuevoVagon.siguiente = primerVagon;
 		primerVagon = nuevoVagon;
+	}
+	
+	public void AgregarClaseIII(int pasajeros){
+		IIIClase nuevoVagon = new IIIClase(pasajeros);
+		nuevoVagon.siguiente = primerVagon;
+		primerVagon = nuevoVagon;
+	}
+	
+	public void AgregarClaseI(int pasajeros){
+		IClase nuevoVagon = new IClase(pasajeros);
+		nuevoVagon.siguiente = primerVagon;
+		primerVagon = nuevoVagon;
+		
 	}
 	
 	public void Agregar(int pasajeros, int posicion){
@@ -81,17 +97,16 @@ public class ListaEnlazada {
 		return tamano;
 	}
 	
-	public void Imprimir(){
+	public void Imprimir(Graphics g){
+		Graphics2D g2d = (Graphics2D) g;
 		Vagon vagonc = primerVagon;
 		if(vagonc != null){
-			int posicion=1;
 			while(vagonc != null){
-				System.out.println("Vagon "+posicion+" contiente "+vagonc.pasajeros()+" pasajeros.");
-				posicion++;
+				vagonc.paint0(g2d);
+				vagonc=vagonc.siguiente;
 			}
 		}else{
 			System.out.println("Lista vacia!");
 		}
 	}
-	
 }

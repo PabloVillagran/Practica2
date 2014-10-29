@@ -16,9 +16,8 @@ public class Lector {
 			lectorArchivo = new BufferedReader(new FileReader(direccion));
 			String linea;
 			while(( linea = lectorArchivo.readLine().toLowerCase())!=null){
-				System.out.println(linea);
 				if(!linea.isEmpty()){
-					comandos(linea);					
+					comandos(linea);
 				}
 			}
 			lectorArchivo.close();
