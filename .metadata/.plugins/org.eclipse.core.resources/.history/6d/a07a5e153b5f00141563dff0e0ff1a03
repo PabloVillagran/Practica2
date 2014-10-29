@@ -71,9 +71,8 @@ public class Interfaz extends JFrame{
 		avanzar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				canvas.setLista(mLista[count]);
-				if(count > mLista.length){
+				if(count < mLista.length){
 					count++;
-					
 				}
 			}
 		});

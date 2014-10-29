@@ -1,5 +1,5 @@
 package interfaz;
-
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ public class Lector {
 	int idEstacion, kilometros;
 	boolean nEstacion;
 	ListaEnlazada lista = null;
-	ListaEnlazada[] nLista = new ListaEnlazada[100];
+	ListaEnlazada[] nLista = new ListaEnlazada[10];
 	BufferedReader lectorArchivo;
 	
 	public Lector(String direccion){
@@ -88,8 +88,8 @@ public class Lector {
 				ListaEnlazada t;
 				for(int i =0;i>nLista.length;i--){
 					t = nLista[i];
-					nLista[i]=lista;
-					nLista[i+1]=t;
+					nLista[i]=t;
+					/*nLista[i+1]=t;*/
 				}
 				lista = new ListaEnlazada(temp[0],temp[1],temp[2]);
 			}

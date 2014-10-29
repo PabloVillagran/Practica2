@@ -9,7 +9,7 @@ public class Lector {
 	int idEstacion, kilometros;
 	boolean nEstacion;
 	ListaEnlazada lista = null;
-	ListaEnlazada[] nLista = new ListaEnlazada[100];
+	ListaEnlazada[] nLista = new ListaEnlazada[10];
 	BufferedReader lectorArchivo;
 	
 	public Lector(String direccion){
@@ -37,25 +37,26 @@ public class Lector {
 				int clase = Integer.valueOf(temp[3]);
 				if(clase == 1){
 					lista.AgregarClaseI(pasajeros);
-					if(lista.primerVagon != null){
+					/*if(lista.primerVagon != null){
 						if((lista.BuscarClase(1).pasajeros)+pasajeros >10 || lista.primerVagon == null){
 							
 						}else{
 							lista.BuscarClase(1).pasajeros+= pasajeros;
 						}
-					}
+					}*/
 				}
 				if(clase == 3){
 					lista.AgregarClaseIII(pasajeros);
-				if(lista.primerVagon != null){
-						if((lista.BuscarClase(3))!=null && (pasajeros>40)){
+					/*if(lista.primerVagon != null){
+						if((lista.BuscarClase(3).pasajeros)+pasajeros >40){
 							lista.AgregarClaseIII(pasajeros);
 						}else{
 							lista.BuscarClase(3).pasajeros+= pasajeros;
 						}
 					}else{
 						lista.AgregarClaseIII(pasajeros);
-					}			}
+					}*/
+				}
 				while(kilometros > ((lista.ContarCarbon()*100) -(lista.Tamano()*10))){
 					lista.AgregarCarbon();
 				}
@@ -68,7 +69,7 @@ public class Lector {
 				int pasajeros= Integer.valueOf(temp[1]);
 				int clase = Integer.valueOf(temp[3]);
 				if(clase == 1){
-					/*if((lista.BuscarClase(1).pasajeros - pasajeros)>0 && lista.primerVagon!=null){
+					/*if((lista.BuscarClase(1).pasajeros - pasajeros)>0 && lista.primerVagon!= null){
 						
 					}*/
 				}
@@ -86,7 +87,7 @@ public class Lector {
 				lista = new ListaEnlazada(temp[0],temp[1],temp[2]);
 			}else{
 				ListaEnlazada t;
-				for(int i =0;i>nLista.length;i--){
+				for(int i =0;i<=nLista.length-2;i++){
 					t = nLista[i];
 					nLista[i]=lista;
 					nLista[i+1]=t;

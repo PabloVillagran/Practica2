@@ -22,10 +22,10 @@ public class Interfaz extends JFrame{
 	private JMenuBar menu = new JMenuBar();
 	private NewCanvas canvas;
 	String estacionActual = "Estacion: ";
-	String direccionArchivo = "";
+	String direccionArchivo = "C:\\Users\\PabloDaniel\\Desktop\\estructura.txt";
 	Lector lector = null;
 	ListaEnlazada mLista[];
-	int count=0;
+	int count=1;
 	
 	public Interfaz(){
 		super("Train Sim X");
@@ -71,9 +71,8 @@ public class Interfaz extends JFrame{
 		avanzar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				canvas.setLista(mLista[count]);
-				if(count > mLista.length){
+				if(count < mLista.length){
 					count++;
-					
 				}
 			}
 		});

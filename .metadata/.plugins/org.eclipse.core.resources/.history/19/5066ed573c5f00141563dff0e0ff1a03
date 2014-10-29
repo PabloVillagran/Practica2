@@ -70,10 +70,10 @@ public class Interfaz extends JFrame{
 		avanzar.setBounds(70,280,150,50);
 		avanzar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				canvas.setLista(mLista[count]);
-				if(count > mLista.length){
+				/*canvas.setLista(mLista[count]);*/
+				if(count < mLista.length){
 					count++;
-					
+					canvas.setLista(mLista[count]);
 				}
 			}
 		});

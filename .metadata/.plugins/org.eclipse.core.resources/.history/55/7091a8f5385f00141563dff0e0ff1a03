@@ -9,7 +9,7 @@ public class Lector {
 	int idEstacion, kilometros;
 	boolean nEstacion;
 	ListaEnlazada lista = null;
-	ListaEnlazada[] nLista = new ListaEnlazada[100];
+	ListaEnlazada[] nLista = new ListaEnlazada[10];
 	BufferedReader lectorArchivo;
 	
 	public Lector(String direccion){
@@ -86,7 +86,7 @@ public class Lector {
 				lista = new ListaEnlazada(temp[0],temp[1],temp[2]);
 			}else{
 				ListaEnlazada t;
-				for(int i =0;i>nLista.length;i--){
+				for(int i =0;i<=nLista.length-2;i++){
 					t = nLista[i];
 					nLista[i]=lista;
 					nLista[i+1]=t;
